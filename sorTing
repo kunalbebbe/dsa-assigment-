@@ -1,0 +1,30 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+bool isInList(list<char>& lst, char ch) {
+    for (auto element : lst) {
+        if (element == ch) {
+            return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+    list<char> characters;
+    characters.push_back('a');
+    characters.push_back('b');
+    characters.push_back('c');
+    characters.push_back('d');
+    characters.push_back('e');
+    characters.push_back('f');
+    char find = 'd';
+    if (isInList(characters, find)) {
+        cout << find << " is in the list." << endl;
+    } else {
+        cout << find << " is not in the list." << endl;
+    }
+
+    return 0;
+}

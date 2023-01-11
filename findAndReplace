@@ -1,0 +1,23 @@
+#include <algorithm>
+#include <locale>
+
+
+
+
+void findAndReplace(string& text, string find, string replace) {
+    // convert both the find and text string to lowercase
+    transform(text.begin(), text.end(), text.begin(), ::tolower);
+
+
+    transform(find.begin(), find.end(), find.begin(), ::tolower);
+    size_t pos = 0;
+
+
+    while ((pos = text.find(find, pos)) != string::npos) {
+        text.replace(pos, find.length(), replace);
+
+
+        pos += replace.length();
+    }
+}
+
